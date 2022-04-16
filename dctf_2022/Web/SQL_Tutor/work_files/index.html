@@ -1,0 +1,53 @@
+<!-- saved from url=(0030)https://sqltutor.dragonsec.si/ -->
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index_files/bootstrap.min.css">
+    <title>TITLE</title>
+    <style type="text/css">
+        <div class="blue"> {
+            color: blue;
+        }
+
+        </div>
+    </style>
+</head>
+
+<body>
+    <main class="container" role="main">
+        <div class="container">
+            <h1>SQL Tutor</h1>
+            <p>Welcome to the SQL Tutor!</p>
+            <p>This is a simple web application that helps you learn SQL.</p>
+            <p>Use the searchbar and dropdown to try out our database!</p>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend"></div><input class="form-control" type="text" id="query_text"
+                placeholder="Enter text here..."><select class="form-select" id="query_no">
+                <option value="0">SELECT * FROM users WHERE users.name='...'</option>
+                <option value="1">SELECT u.*, COUNT(c.id) as `rich meter` FROM users u JOIN cars c ON c.ownerID=u.id
+                    WHERE u.name='...' GROUP BY u.id</option>
+                <option value="2">SELECT * FROM users WHERE users.name !='...'</option>
+                <option value="3">SELECT * FROM cars WHERE cars.make='...'</option>
+                <option value="4">SELECT * FROM users WHERE users.name LIKE '%...%'</option>
+                <option value="5">SELECT * FROM users WHERE users.name LIKE BINARY '%...%'</option>
+                <option value="6">SELECT * FROM users WHERE users.name LIKE BINARY '%...'</option>
+                <option value="7">SELECT cars.* FROM cars JOIN users ON cars.ownerID=users.id WHERE users.name='...'
+                </option>
+                <option value="8">SELECT name AS `...` FROM users WHERE users.id &lt; 10</option>
+            </select><button class="btn btn-primary" type="submit" id="query_execute">Execute!</button>
+        </div>
+        <div class="container">
+            <div id="query_results"></div>
+        </div>
+    </main>
+    <script src="./index_files/jquery-3.6.0.min.js"></script>
+    <script src="./index_files/popper.min.js"></script>
+    <script src="./index_files/bootstrap.min.js"></script>
+    <script src="./index_files/index.js"> </script>
+</body>
+
+</html>
